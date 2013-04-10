@@ -1,0 +1,48 @@
+#========================================================================
+#=  Global Ignores
+#========================================================================
+.DS_Store
+.svn
+.*.swp
+*.un~
+*~*~
+
+
+#========================================================================
+#=  Project Ignores
+#========================================================================
+.rbenv-vars
+config/initializers/pry.rb
+
+
+#========================================================================
+#=  Specific Ignores
+#========================================================================
+/Users/kip/Projects/WU4M/marriage_hero/Gemfile
+/Users/kip/Projects/WU4M/marriage_hero/Gemfile.lock
+
+
+#========================================================================
+#=  Home Directory Ignores
+#========================================================================
+.CFUserTextEncoding
+.bash_history
+.lesshst
+.ssh/id_rsa*
+.ssh/known_hosts
+.viminfo
+.z
+Applications/
+Desktop/
+Documents/
+Downloads/
+Dropbox/
+Library/
+Movies/
+Music/
+Pictures/
+Projects/
+Public/
+bin/
+config_files-old/
+tmp/

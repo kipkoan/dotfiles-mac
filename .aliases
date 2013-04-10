@@ -1,0 +1,86 @@
+#==============================================================================
+#=  Aliases                                                                   =
+#==============================================================================
+
+#=  development  ==============================================================
+alias b='bundle'
+alias be='bundle exec'
+#alias cuc="cucumber -r features"
+#alias g="git"
+alias gadd="git add -u && git add . && git status"
+#alias gci="git pull --rebase && rake && git push"
+#alias gi="sudo gem install"
+#alias giv="sudo gem install -v"
+#alias hgclean="hg status | grep -e '^\\?' | sed 's/^\\?//' | xargs -t rm -f"
+#alias hgdi="hg diff --color=always --git | less -r"
+#alias hgprecommit="hg pull && rake features && rake test"
+#alias migrate="rake db:migrate db:test:prepare"
+#alias remigrate="rake db:migrate && rake db:migrate:redo && rake db:schema:dump db:test:prepare"
+#alias sf="ruby_tu_rs functional"
+#alias su="ruby_tu_rs unit"
+#alias svnprecommit="git svn rebase && rake features && rake test"
+#alias tf="ruby_test functional"
+#alias ti="ruby_test integration"
+#alias tu="ruby_test unit"
+
+#=  bash  =====================================================================
+alias ..='cd ..'
+alias cd..='cd ..'
+alias c='clear'
+alias diff='colordiff'
+alias e='exit'
+alias grep='grep $GREP_OPTIONS'
+alias h='history'
+alias ht='HISTTIMEFORMAT="%F %T  " history'
+#alias ls='/usr/local/bin/gls $LS_OPTIONS -hF --dereference-command-line-symlink-to-dir'
+alias ls='/bin/ls -hF'
+alias ls.='ls -d .*'
+alias l='ls -l'
+alias l.='ls -ld .*'
+alias la='ls -al'
+alias ll='ls -Al'
+alias locate='mdfind -name'
+#alias mtr="mtr -t"
+alias root="sudo bash -l"
+alias sudo='sudo -Es'
+#alias updatedb='sudo LC_ALL="C" gupdatedb'
+alias v='~/Applications/MacVim.app/Contents/MacOS/Vim -g'
+alias v='~/Applications/MacVim.app/Contents/MacOS/Vim -v'
+alias vi='~/Applications/MacVim.app/Contents/MacOS/Vim -v'
+alias vim='~/Applications/MacVim.app/Contents/MacOS/Vim -v'
+
+
+
+#==============================================================================
+#=  Functions                                                                 =
+#==============================================================================
+
+#=  SSH into port-fowrwarded host =============================================
+sshr () {
+  ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" -o "LogLevel ERROR" -p $1 root@canid-i.redangus.org
+}
+
+sshl () {
+  ssh -o "StrictHostKeyChecking no" -o "UserKnownHostsFile /dev/null" -o "LogLevel ERROR" -p $1 root@localhost
+}
+
+#=  PDF Man Pages  ============================================================
+pdfman () { man -t $@ | ps2pdf - - | open -f -a Preview; }
+
+#=  Back-Up file  =============================================================
+#bu () { cp -a "$1" "$1"~$(date +%F.%T)~; }
+bu () {
+  pattern='^.*[^/]'  # get everything except for trailing forward-slashes
+  [[ $1 =~ $pattern ]]  # match regex
+  file=${BASH_REMATCH[0]}  # assign matched pattern to "$file"
+  cp -a "$file" "$file"~$(date +%F.%T)~
+}
+
+#=  Change Directory to Front Finder window  ==================================
+ff () { osascript -e 'tell application "Finder"'\
+ -e "if (${1-1} <= (count Finder windows)) then"\
+ -e "get POSIX path of (target of window ${1-1} as alias)"\
+ -e 'else' -e 'get POSIX path of (desktop as alias)'\
+ -e 'end if' -e 'end tell'; };\
+
+cdff () { cd "`ff $@`"; };
