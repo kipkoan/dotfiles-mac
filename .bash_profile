@@ -35,10 +35,10 @@ fi
 
 
 #=  Editors  ==================================================================
-EDITOR="~/Applications/MacVim.app/Contents/MacOS/Vim -v" && export EDITOR
-VISUAL="~/Applications/MacVim.app/Contents/MacOS/Vim -v" && export VISUAL
-SVN_EDITOR="~/Applications/MacVim.app/Contents/MacOS/Vim -v" && export SVN_EDITOR
-GIT_EDITOR="~/Applications/MacVim.app/Contents/MacOS/Vim -v" && export GIT_EDITOR
+EDITOR="vim" && export EDITOR
+VISUAL="vim" && export VISUAL
+SVN_EDITOR="vim" && export SVN_EDITOR
+GIT_EDITOR="vim" && export GIT_EDITOR
 
 
 #=  Terminal colours (after installing GNU coreutils)  ========================
