@@ -26,10 +26,16 @@ config/initializers/pry.rb
 #=  Home Directory Ignores
 #========================================================================
 .CFUserTextEncoding
+.Trash/
 .bash_history
+.gem/
 .lesshst
+.rbenv/plugins/
+.rbenv/shims/
+.rbenv/versions/
 .ssh/id_rsa*
 .ssh/known_hosts
+.subversion/
 .viminfo
 .z
 Applications/
