@@ -36,6 +36,7 @@ config/initializers/pry.rb
 .ssh/id_rsa*
 .ssh/known_hosts
 .subversion/
+.vim/
 .viminfo
 .z
 Applications/
