@@ -28,6 +28,8 @@ config/initializers/pry.rb
 .CFUserTextEncoding
 .Trash/
 .bash_history
+.cache/
+.fonts/
 .gem/
 .lesshst
 .rbenv/plugins/
@@ -37,6 +39,7 @@ config/initializers/pry.rb
 .ssh/known_hosts
 .subversion/
 .vim/
+.vim_colorv_cache_fav
 .viminfo
 .z
 Applications/
