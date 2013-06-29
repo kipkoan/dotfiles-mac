@@ -4,15 +4,19 @@ coreutils
 csshx
 git
 git-flow
+hping
 ipcalc
+iperf
 lftp
-macvim
+macvim --override-system-vim
 mobile-shell
 mtr
 rbenv
-rmtrash
-watch
-ruby-build
 rbenv-default-gems
 rbenv-gem-rehash
 rbenv-vars
+rmtrash
+ruby-build
+the_silver_searcher
+tig
+watch
