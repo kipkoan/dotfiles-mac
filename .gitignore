@@ -1,17 +1,18 @@
 #========================================================================
 #=  Global Ignores
 #========================================================================
-.DS_Store
-.svn
-.*.swp
 *.un~
 *~*~
+.*.swp
+.DS_Store
+.svn
 
 
 #========================================================================
 #=  Project Ignores
 #========================================================================
 .rbenv-vars
+bin/START
 config/initializers/pry.rb
 
 
@@ -29,6 +30,7 @@ config/initializers/pry.rb
 .Trash/
 .bash_history
 .cache/
+.dropbox/
 .fonts/
 .gem/
 .lesshst
@@ -42,6 +44,8 @@ config/initializers/pry.rb
 .vim_colorv_cache_fav
 .viminfo
 .z
+Accellion/
+Applications (Parallels)/
 Applications/
 Desktop/
 Documents/
