@@ -60,3 +60,8 @@ Public/
 bin/
 config_files-old/
 tmp/
+.account
+.anyconnect
+.cisco/
+.htoprc
+.passwordsafe/
