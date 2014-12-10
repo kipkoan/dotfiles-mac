@@ -1,3 +1,4 @@
+autossh
 bash-completion
 colordiff
 coreutils
@@ -19,4 +20,5 @@ rmtrash
 ruby-build
 the_silver_searcher
 tig
+tmux
 watch

@@ -6,6 +6,7 @@ set editing-mode vi
 set mark-symlinked-directories on
 
 #set keymap vi
+#set keymap vi-insert
 
 # Re-read init file:
 "\C-x\C-r": re-read-init-file
@@ -18,8 +19,6 @@ $if Bash
   Space: magic-space
 $endif
 
-#set keymap vi-insert
-
 # Edit options before rerunning previous command, eg: ls a b c -> ls -al a b c
 "\C-o": "\e-0eli "
 
@@ -28,6 +27,9 @@ $endif
 
 # glob patterns without executing, eg: 'rm *x'
 "\C-e": glob-expand-word
+
+# expand line without executing, eg: 'rm *'
+"\C-f": shell-expand-line
 
 # ^p check for partial match in history
 "\C-p": dynamic-complete-history

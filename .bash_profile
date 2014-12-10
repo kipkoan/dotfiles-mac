@@ -20,9 +20,11 @@ brew_prefix=`brew --prefix` && export brew_prefix
 
 #=  Homebrew/bin  =============================================================
 PATH=/usr/local/bin:$PATH && export PATH
+# PATH=$PATH:/usr/local/bin && export PATH
 
 #=  Homebrew/sbin  ============================================================
 PATH=/usr/local/sbin:$PATH && export PATH
+# PATH=$PATH:/usr/local/sbin && export PATH
 
 #=  Homebrew/bash-completion  =================================================
 if [ -f $brew_prefix/etc/bash_completion ]; then
@@ -95,3 +97,9 @@ fi
 
 #=  Path  =====================================================================
 PATH=$HOME/bin:$PATH && export PATH
+
+
+#=  Prompt  ===================================================================
+if [ -f ~/.bash_prompt ]; then
+  source ~/.bash_prompt
+fi

@@ -28,15 +28,25 @@ config/initializers/pry.rb
 #========================================================================
 .CFUserTextEncoding
 .Trash/
+.Xauthority
+.account
+.anyconnect
 .bash_history
 .cache/
+.cisco/
 .dropbox/
 .fonts/
 .gem/
+.htoprc
+.irb_history
 .lesshst
+.node-gyp/
+.npm/
+.passwordsafe/
 .rbenv/plugins/
 .rbenv/shims/
 .rbenv/versions/
+.sqlite_history
 .ssh/id_rsa*
 .ssh/known_hosts
 .subversion/
@@ -44,9 +54,11 @@ config/initializers/pry.rb
 .vim_colorv_cache_fav
 .viminfo
 .z
+.z.*
 Accellion/
 Applications (Parallels)/
 Applications/
+Code/
 Desktop/
 Documents/
 Downloads/
@@ -59,6 +71,7 @@ Projects/
 Public/
 bin/
 config_files-old/
+maximum-awesome/
 tmp/
 .account
 .anyconnect
