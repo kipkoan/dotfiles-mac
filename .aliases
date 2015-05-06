@@ -28,7 +28,10 @@ alias root="sudo bash -l"
 alias v='gvim'
 alias gv='gvim'
 
+alias sudo='sudo '
 
+alias lstcp='lsof -nP +c0 -iTCP -sTCP:LISTEN'
+alias lsudp='lsof -nP +c0 -iUDP'
 
 alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
 
