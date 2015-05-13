@@ -3,7 +3,7 @@
   email = kipkoan@gmail.com
 
 [core]
-  excludesfile = /Users/kip/.gitignore
+  excludesfile = ~/.config/git/ignore
   legacyheaders = false
 
 [repack]
