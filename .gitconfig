@@ -48,6 +48,7 @@
   co = checkout
   cof = checkout --
   com = "!f() { git merge --no-ff --no-commit $@ && git reset head -q; }; f"  # checkout-merge
+  cp = cherry-pick
   d = diff
   dt = difftool
   div = divergence
