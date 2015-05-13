@@ -30,6 +30,8 @@ alias gv='gvim'
 
 
 
+alias flushdns='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches'
+
 #==============================================================================
 #=  Functions                                                                 =
 #==============================================================================
