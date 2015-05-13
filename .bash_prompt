@@ -156,4 +156,4 @@ prompt_set_character
 
 
 # Tell bash to execute this function just before displaying its prompt.
-PROMPT_COMMAND=set_bash_prompt
+PROMPT_COMMAND="$PROMPT_COMMAND set_bash_prompt" && export PROMPT_COMMAND
