@@ -82,11 +82,6 @@
   ra = !git r --all
   rh = reset HEAD
   st = status
-  track = "!f(){ branch=$(git name-rev --name-only HEAD); cmd=\"git branch \
-    --set-upstream $branch ${1:-origin}/${2:-$branch}\"; echo $cmd; $cmd; }; f"
-  track2 = !sh -c "\"git for-each-ref --format='%(refname:short)' refs/heads/* \
-    | while read b; do if r=$(git config --get branch.$b.remote); then \
-    m=$(git config --get branch.$b.merge); echo ""$b -> $r/${m##*/}""; fi; done"\"
   wc = whatchanged -p --abbrev-commit --pretty=medium --
 
 [format]
