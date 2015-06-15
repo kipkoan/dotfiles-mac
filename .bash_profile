@@ -89,7 +89,7 @@ HISTIGNORE="ls:ll:la:ls.:l.:man:[bf]g:history:history *:h:h *:clear:c:exit:e" &&
 
 #=  Aliases  ==================================================================
 if [ -f ~/.aliases ]; then
-  . ~/.aliases
+  source ~/.aliases
 fi
 
 
@@ -108,3 +108,23 @@ PATH=$HOME/bin:$PATH && export PATH
 if [ -f ~/.bash_prompt ]; then
   source ~/.bash_prompt
 fi
+
+
+#=  Start TMUX on Login  ======================================================
+if [[ -z $TMUX ]]; then
+  tm $(date +%Y%m%d%H%M%S)
+fi
+
+
+#=  Zillow SPRINTER Environment  ==============================================
+#SPRINTER_sprinter
+[ -r /Users/kipm/.sprinter/sprinter/.env ] && . /Users/kipm/.sprinter/sprinter/.env
+#SPRINTER_sprinter
+
+#SPRINTER_zillow
+[ -r /Users/kipm/.sprinter/zillow/.env ] && . /Users/kipm/.sprinter/zillow/.env
+#SPRINTER_zillow
+
+#SPRINTERGLOBALS
+[ -r "/Users/kipm/.bashrc" ] && . /Users/kipm/.bashrc
+#SPRINTERGLOBALS

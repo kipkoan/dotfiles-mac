@@ -9,6 +9,7 @@ set numberwidth=5
 set relativenumber
 set showcmd
 set ttyfast
+set ignorecase
 
 " Custom Colors
 hi ColorColumn ctermbg=234 guibg=#333333
