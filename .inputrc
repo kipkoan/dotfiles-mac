@@ -25,6 +25,9 @@ $endif
 # Cycle thru completions.
 "\C-a": menu-complete
 
+# ignore case on tab-completion
+set completion-ignore-case on
+
 # glob patterns without executing, eg: 'rm *x'
 "\C-e": glob-expand-word
 

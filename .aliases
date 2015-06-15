@@ -57,6 +57,15 @@ bu () {
   cp -a "$file" "$file"~$(date +%F.%T)~
 }
 
+#=  Random Sort  ==============================================================
+rsort () {
+  if sort -R /dev/null 2> /dev/null; then
+    sort -R
+  else
+    while IFS= read -r f; do printf "%05d %s\n" "$RANDOM" "$f"; done | sort -n | cut -c7-
+  fi
+}
+
 #=  Change Directory to Front Finder window  ==================================
 ff () { osascript -e 'tell application "Finder"'\
  -e "if (${1-1} <= (count Finder windows)) then"\

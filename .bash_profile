@@ -23,11 +23,9 @@ brew_prefix=`brew --prefix` && export brew_prefix
 
 #=  Homebrew/bin  =============================================================
 PATH=/usr/local/bin:$PATH && export PATH
-# PATH=$PATH:/usr/local/bin && export PATH
 
 #=  Homebrew/sbin  ============================================================
 PATH=/usr/local/sbin:$PATH && export PATH
-# PATH=$PATH:/usr/local/sbin && export PATH
 
 #=  Homebrew/bash-completion  =================================================
 if [ -f $brew_prefix/etc/bash_completion ]; then
@@ -66,10 +64,14 @@ fi
 #=  make history store more commands (1000000 bytes)  =========================
 HISTSIZE=1000000 && export HISTSIZE
 HISTFILESIZE=1000000 && export HISTFILESIZE
+HISTTIMEFORMAT='%F %T  ' && export HISTTIMEFORMAT
 
 #=  unify bash history across session exits, and update in realtime  ==========
 shopt -s histappend
-PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND" && export PROMPT_COMMAND
+if [[ ! ${PROMPT_COMMAND} =~ 'history -a; history -n;' ]]; then
+  PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND" && export PROMPT_COMMAND
+fi
+
 
 #=  store multi-line commands in history  =====================================
 shopt -s cmdhist
