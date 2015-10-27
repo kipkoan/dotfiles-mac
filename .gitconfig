@@ -16,6 +16,9 @@
 [merge]
   tool = vimdiff
 
+[rebase]
+  autosquash = true
+
 [diff]
   tool = vimdiff
 
@@ -45,11 +48,13 @@
   c = commit
   ca = commit -a
   cam = commit -am
+  cf = commit --fixup
   cm = commit -m
   co = checkout
   cof = checkout --
   com = "!f() { git merge --no-ff --no-commit $@ && git reset head -q; }; f"  # checkout-merge
   cp = cherry-pick
+  cs = commit --squash
   d = diff
   dt = difftool
   div = divergence
@@ -82,6 +87,7 @@
   plre = pull --rebase
   r = !git --no-pager l -20
   ra = !git r --all
+  rb = rebase --interactive --autosquash
   rh = reset HEAD
   st = status
   wc = whatchanged -p --abbrev-commit --pretty=medium --
