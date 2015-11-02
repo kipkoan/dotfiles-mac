@@ -12,6 +12,8 @@ lftp
 macvim --override-system-vim
 mobile-shell
 mtr
+pyenv
+pyenv-virtualenv
 rbenv
 rbenv-default-gems
 rbenv-gem-rehash
