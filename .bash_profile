@@ -123,17 +123,3 @@ fi
 if [[ -z $TMUX ]]; then
   tm $(date +%Y%m%d%H%M%S)
 fi
-
-
-#=  Zillow SPRINTER Environment  ==============================================
-#SPRINTER_sprinter
-[ -r /Users/kipm/.sprinter/sprinter/.env ] && . /Users/kipm/.sprinter/sprinter/.env
-#SPRINTER_sprinter
-
-#SPRINTER_zillow
-[ -r /Users/kipm/.sprinter/zillow/.env ] && . /Users/kipm/.sprinter/zillow/.env
-#SPRINTER_zillow
-
-#SPRINTERGLOBALS
-[ -r "/Users/kipm/.bashrc" ] && . /Users/kipm/.bashrc
-#SPRINTERGLOBALS
