@@ -9,7 +9,7 @@ hping
 ipcalc
 iperf
 lftp
-macvim --override-system-vim
+macvim --with-override-system-vim
 mobile-shell
 mtr
 pyenv
