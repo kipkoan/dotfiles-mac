@@ -25,7 +25,8 @@ alias ll='ls -Al'
 alias locate='mdfind -name'
 alias root="sudo bash -l"
 #alias sudo='sudo -Es'
-alias v='gvim'
+alias v='vim'
+alias vi='vim'
 alias gv='gvim'
 
 alias sudo='sudo '

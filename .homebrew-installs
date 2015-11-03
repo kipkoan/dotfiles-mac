@@ -9,7 +9,6 @@ hping
 ipcalc
 iperf
 lftp
-macvim --with-override-system-vim
 mobile-shell
 mtr
 pyenv
@@ -23,4 +22,5 @@ ruby-build
 the_silver_searcher
 tig
 tmux
+vim --with-override-system-vim
 watch
