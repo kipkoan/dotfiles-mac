@@ -119,6 +119,10 @@ if [ -f ~/.bash_prompt ]; then
 fi
 
 
+#=  Fix Lockups on Mac OS 10.11  ==============================================
+sudo pkill -9 notifyd
+
+
 #=  Start TMUX on Login  ======================================================
 if [[ -z $TMUX ]]; then
   tm $(date +%Y%m%d%H%M%S)
