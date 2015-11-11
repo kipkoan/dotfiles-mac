@@ -32,6 +32,11 @@ if [ -f $brew_prefix/etc/bash_completion ]; then
   . $brew_prefix/etc/bash_completion
 fi
 
+#=  Homebrew/github_api_token =================================================
+if [ -f ~/.homebrew_github_api_token ]; then
+  . ~/.homebrew_github_api_token
+fi
+
 #= Homebrew/coreutils  ========================================================
 #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 #MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
