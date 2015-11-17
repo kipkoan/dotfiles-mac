@@ -42,6 +42,10 @@ fi
 #MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 
+#= AWS CLI Completion  ========================================================
+complete -C aws_completer aws
+
+
 #=  Editors  ==================================================================
 EDITOR="vim" && export EDITOR
 VISUAL="vim" && export VISUAL
