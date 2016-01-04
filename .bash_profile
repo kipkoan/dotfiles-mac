@@ -2,6 +2,10 @@
 set -o vi
 
 
+#=  use same ssh_agent across multiple logins  ================================
+eval `~/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
+
+
 #=  disable output flow control ===============================================
 stty -ixon -ixoff
 
