@@ -133,7 +133,7 @@ fi
 
 
 #=  Fix Lockups on Mac OS 10.11  ==============================================
-sudo pkill -9 notifyd
+#sudo pkill -9 notifyd
 
 
 #=  Start TMUX on Login  ======================================================
