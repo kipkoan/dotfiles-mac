@@ -19,7 +19,7 @@ LC_ALL="en_US.utf-8" && export LC_ALL
 
 
 #=  Python  ===================================================================
-PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH && export PYTHONPATH
+# PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH && export PYTHONPATH
 
 
 #=  Set HOMEBREW_PREFIX =======================================================
