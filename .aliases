@@ -61,6 +61,13 @@ bu () {
   cp -a "$file" "$file"~$(date +%F.%T)~
 }
 
+#=  brew cask upgrade  ========================================================
+brew-cask-upgrade() {
+  for pkg in $(brew cask list); do
+    ! brew cask info ${pkg} | grep -qF "Not installed" || brew cask install ${pkg}
+  done
+}
+
 #=  Random Sort  ==============================================================
 rsort () {
   if sort -R /dev/null 2> /dev/null; then
