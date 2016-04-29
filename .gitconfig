@@ -71,6 +71,7 @@
   unignore = update-index --no-assume-unchanged
   skip = update-index --skip-worktree
   unskip = update-index --no-skip-worktree
+  deleted = log --diff-filter=D --summary
 
   in = !git log $(git rev-parse --abbrev-ref --symbolic-full-name @{u}) ^HEAD
   l = log --graph --abbrev-commit --date=relative
