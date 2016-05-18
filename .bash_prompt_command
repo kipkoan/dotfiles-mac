@@ -131,7 +131,7 @@ function set_bash_prompt () {
 
   # Fill spaces between the left and right halves
   strippedbranch=`echo $BRANCH | sed 's|\\\\\\[[^]]*\\]||g'`
-  lefthalf="`whoami`@`hostname` `pwd | sed "s|$HOME|~|"` $strippedbranch"
+  lefthalf="`whoami`@`hostname -s` `pwd | sed "s|$HOME|~|"` $strippedbranch"
   righthalf=`date "+${DATEFORMAT}"`
   let fillsize=$(tput cols)-${#lefthalf}-${#righthalf}
   if [[ $fillsize > 1 ]]; then
@@ -142,7 +142,7 @@ function set_bash_prompt () {
   fi
 
   # Set the bash prompt variable.
-  PS1="\n${USER_COLOR}\u${FGCY}@${HOSTCOLOR}\H${RESET} ${FGWT}\w${RESET} ${BRANCH}${fill}${FGBL}\D{${DATEFORMAT}}${RESET}\n\
+  PS1="\n${USER_COLOR}\u${FGCY}@${HOSTCOLOR}\h${RESET} ${FGWT}\w${RESET} ${BRANCH}${fill}${FGBL}\D{${DATEFORMAT}}${RESET}\n\
 ${PROMPT_SYMBOL} "
 }
 
