@@ -2,6 +2,9 @@
 set -o vi
 
 
+#=  use all identities with passphrases stored in keychain  ===================
+/usr/bin/ssh-add -A &> /dev/null
+
 #=  use same ssh_agent across multiple logins  ================================
 eval `~/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
 
