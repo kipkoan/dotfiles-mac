@@ -6,7 +6,7 @@ set -o vi
 /usr/bin/ssh-add -A &> /dev/null
 
 #=  use same ssh_agent across multiple logins  ================================
-eval `~/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
+eval `/usr/local/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
 
 
 #=  disable output flow control ===============================================
