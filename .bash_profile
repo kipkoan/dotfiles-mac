@@ -6,7 +6,9 @@ set -o vi
 /usr/bin/ssh-add -A &> /dev/null
 
 #=  use same ssh_agent across multiple logins  ================================
-eval `/usr/local/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
+if [[ -f /usr/local/bin/keychain ]]; then
+  eval `/usr/local/bin/keychain -q --eval --agents ssh --inherit any id_rsa`
+fi
 
 
 #=  disable output flow control ===============================================
@@ -25,28 +27,31 @@ LC_ALL="en_US.utf-8" && export LC_ALL
 # PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH && export PYTHONPATH
 
 
-#=  Set HOMEBREW_PREFIX =======================================================
-brew_prefix=`brew --prefix` && export brew_prefix
+#=  Homebrew  =================================================================
+if hash brew 2>/dev/null; then
+  #=  Set HOMEBREW_PREFIX =======================================================
+  brew_prefix=`brew --prefix` && export brew_prefix
 
-#=  Homebrew/bin  =============================================================
-PATH=/usr/local/bin:$PATH && export PATH
+  #=  Homebrew/bin  =============================================================
+  PATH=/usr/local/bin:$PATH && export PATH
 
-#=  Homebrew/sbin  ============================================================
-PATH=/usr/local/sbin:$PATH && export PATH
+  #=  Homebrew/sbin  ============================================================
+  PATH=/usr/local/sbin:$PATH && export PATH
 
-#=  Homebrew/bash-completion  =================================================
-if [ -f $brew_prefix/etc/bash_completion ]; then
-  . $brew_prefix/etc/bash_completion
+  #=  Homebrew/bash-completion  =================================================
+  if [[ -f $brew_prefix/etc/bash_completion ]]; then
+    . $brew_prefix/etc/bash_completion
+  fi
+
+  #=  Homebrew/github_api_token =================================================
+  if [[ -f ~/.homebrew_github_api_token ]]; then
+    . ~/.homebrew_github_api_token
+  fi
+
+  #= Homebrew/coreutils  ========================================================
+  #PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  #MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 fi
-
-#=  Homebrew/github_api_token =================================================
-if [ -f ~/.homebrew_github_api_token ]; then
-  . ~/.homebrew_github_api_token
-fi
-
-#= Homebrew/coreutils  ========================================================
-#PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-#MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 
 #= AWS CLI Completion  ========================================================
@@ -69,11 +74,13 @@ IN="\[\033[0m\]"
 
 PS1="$NM[$HI\u@$HII\h $SI\w$NM]\\\$$IN " && export PS1
 
-if [ "$TERM" != "dumb" ]; then
+if [[ "$TERM" != "dumb" ]]; then
   LS_OPTIONS='--color=auto' && export LS_OPTIONS
   GREP_OPTIONS='--color=auto' && export GREP_COLORS
   CLICOLOR=1 && export CLICOLOR
-  eval `gdircolors ~/.dir_colors`
+  if hash gdircolors 2>/dev/null; then
+    eval `gdircolors ~/.dir_colors`
+  fi
 fi
 
 
@@ -100,11 +107,13 @@ HISTCONTROL=ignoredups:ignorespace && export HISTCONTROL
 HISTIGNORE="ls:ll:la:ls.:l.:man:[bf]g:history:history *:h:h *:clear:c:exit:e" && export HISTIGNORE
 
 #=  z ("cd" jump history)  ====================================================
-. /usr/local/etc/profile.d/z.sh
+if [[ -f /usr/local/etc/profile.d/z.sh ]]; then
+  . /usr/local/etc/profile.d/z.sh
+fi
 
 
 #=  Aliases  ==================================================================
-if [ -f ~/.aliases ]; then
+if [[ -f ~/.aliases ]]; then
   source ~/.aliases
 fi
 
@@ -130,7 +139,7 @@ PATH=$HOME/bin:$PATH && export PATH
 
 
 #=  Prompt  ===================================================================
-if [ -f ~/.bash_prompt ]; then
+if [[ -f ~/.bash_prompt ]]; then
   source ~/.bash_prompt
 fi
 
@@ -140,6 +149,6 @@ fi
 
 
 #=  Start TMUX on Login  ======================================================
-if [[ -z $TMUX ]]; then
+if [[ -z $TMUX ]] && hash tmux 2>/dev/null; then
   tm $(date +%Y%m%d%H%M%S)
 fi
