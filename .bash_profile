@@ -119,17 +119,17 @@ fi
 
 
 #=  rbenv  ====================================================================
-if which rbenv > /dev/null; then
+if hash rbenv 2>/dev/null; then
   PATH=$HOME/.rbenv/bin:$PATH && export PATH
   eval "$(rbenv init -)"
 fi
 
 
 #=  pyenv  ====================================================================
-if which pyenv > /dev/null; then
+if hash pyenv 2>/dev/null; then
   eval "$(pyenv init -)";
 fi
-if which pyenv-virtualenv-init > /dev/null; then
+if hash pyenv-virtualenv-init 2>/dev/null; then
   eval "$(pyenv virtualenv-init -)";
 fi
 
