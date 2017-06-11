@@ -134,6 +134,12 @@ if which pyenv-virtualenv-init > /dev/null; then
 fi
 
 
+#=  jenv  =====================================================================
+if hash jenv 2>/dev/null; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
 #=  Path  =====================================================================
 PATH=$HOME/bin:$PATH && export PATH
 

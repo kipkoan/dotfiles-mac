@@ -9,6 +9,7 @@ git-flow
 hping
 ipcalc
 iperf
+jenv
 keychain
 lftp
 macvim --with-override-system-vim
