@@ -1,6 +1,7 @@
 autossh
 bash-completion
 clipper
+cmake
 colordiff
 coreutils
 csshx
