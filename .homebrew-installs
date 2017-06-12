@@ -13,7 +13,7 @@ iperf
 jenv
 keychain
 lftp
-macvim --with-override-system-vim
+macvim --with-override-system-vim --with-lua --with-luajit
 mobile-shell
 mtr
 pyenv
