@@ -37,6 +37,9 @@ alias lsudp='lsof -nP +c0 -iUDP'
 
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
+# Pipe anything into `clip` to forward it to Clipper
+alias clip="nc localhost 8377"
+
 #==============================================================================
 #=  Functions                                                                 =
 #==============================================================================
