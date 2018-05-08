@@ -18,6 +18,12 @@ stty -ixon -ixoff
 LC_ALL="en_US.utf-8" && export LC_ALL
 
 
+#=  Environment Secrets  ======================================================
+if [[ -f ~/.secrets ]]; then
+. ~/.secrets
+fi
+
+
 #=  MySQl  ====================================================================
 #PATH=$PATH:/usr/local/mysql/bin && export PATH
 #DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH && export DYLD_LIBRARY_PATH
@@ -41,11 +47,6 @@ if hash brew 2>/dev/null; then
   #=  Homebrew/bash-completion  =================================================
   if [[ -f $brew_prefix/etc/bash_completion ]]; then
     . $brew_prefix/etc/bash_completion
-  fi
-
-  #=  Homebrew/github_api_token =================================================
-  if [[ -f ~/.homebrew_github_api_token ]]; then
-    . ~/.homebrew_github_api_token
   fi
 
   #= Homebrew/coreutils  ========================================================
