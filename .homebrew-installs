@@ -7,6 +7,7 @@ coreutils
 csshx
 git
 git-flow
+gnu-sed
 hping
 ipcalc
 iperf
