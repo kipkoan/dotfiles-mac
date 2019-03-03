@@ -141,6 +141,14 @@ if hash jenv 2>/dev/null; then
   eval "$(jenv init -)"
 fi
 
+
+#=  Go  =======================================================================
+if hash go 2>/dev/null; then
+  GOPATH=$(go env GOPATH) && export GOPATH
+  PATH="${GOPATH}/bin:${PATH}" && export PATH
+fi
+
+
 #=  Path  =====================================================================
 PATH=$HOME/bin:$PATH && export PATH
 
