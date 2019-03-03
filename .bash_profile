@@ -137,7 +137,7 @@ fi
 
 #=  jenv  =====================================================================
 if hash jenv 2>/dev/null; then
-  export PATH="$HOME/.jenv/bin:$PATH"
+  PATH="$HOME/.jenv/bin:$PATH" && export PATH
   eval "$(jenv init -)"
 fi
 
