@@ -44,6 +44,10 @@ if hash brew 2>/dev/null; then
   #=  Homebrew/sbin  ============================================================
   PATH=/usr/local/sbin:$PATH && export PATH
 
+  #=  util-linux bin & sbin  ====================================================
+  PATH=/usr/local/opt/util-linux/bin:$PATH && export PATH
+  PATH=/usr/local/opt/util-linux/sbin:$PATH && export PATH
+
   #=  Homebrew/bash-completion  =================================================
   if [[ -f $brew_prefix/etc/bash_completion ]]; then
     . $brew_prefix/etc/bash_completion
