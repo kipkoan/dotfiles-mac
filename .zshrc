@@ -99,7 +99,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='code'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -122,14 +122,14 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 alias gac="gimme-aws-creds"
 alias v="code"
-alias ld='ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "ou=ZillowSEA,dc=zillow,dc=local" -s sub '
+alias ld='ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub '
 
 ldu() {
-  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "ou=ZillowSEA,dc=zillow,dc=local" -s sub samaccountname=$1 | grep member | sort
+  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub samaccountname=$1 | grep member | sort
 }
 
 ldg() {
-  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "ou=ZillowSEA,dc=zillow,dc=local" -s sub cn=$1 | grep member | sort
+  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub cn=$1 | grep member | sort
 }
 
 ssh-add -A >/dev/null 2>&1
