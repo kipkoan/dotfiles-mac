@@ -79,7 +79,7 @@ HIST_STAMPS="%F %T"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew osx history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,11 +96,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='vim'
-fi
+export EDITOR='vim'
+
+export LESS='-XFR'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
