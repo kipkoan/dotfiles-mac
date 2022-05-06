@@ -9,7 +9,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kipm/.oh-my-zsh"
+export ZSH="/Users/kip/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -157,7 +157,7 @@ eval "$(pyenv init -)"
 
 export AWS_DEFAULT_REGION=us-west-2
 
-export KUBECONFIG=~/.kube/config:~/.kube/config.streamz
+#export KUBECONFIG=~/.kube/config
 
 # tabtab source for packages
 # uninstall by removing these lines
