@@ -8,8 +8,14 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# add Python
+export PATH=/Users/kmcentir/Library/Python/3.8/bin:$PATH
+
+# add Rancher Desktop
+export PATH=$HOME/.rd/bin:$PATH
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kip/.oh-my-zsh"
+export ZSH="/Users/kmcentir/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -79,7 +85,8 @@ HIST_STAMPS="%F %T"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+#plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git terraform colored-man-pages colorize pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,6 +107,18 @@ export EDITOR='vim'
 
 export LESS='-XFR'
 
+## pic-tools
+source /Users/kmcentir/Code/bitbucket.oci.oraclecorp.com/PIC/pic-tools/scripts/*.env
+
+#for Azul JDK 11
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+#for Azul JDK 8
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"
+
+export M3_HOME="/opt/homebrew/Cellar/maven/3.8.6"
+export M3="$M3_HOME/bin"
+export PATH="$M3:$PATH"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -117,6 +136,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+alias secretCli="java -jar /Users/kmcentir/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
 alias gac="gimme-aws-creds"
 alias v="code"
@@ -131,6 +151,11 @@ ldg() {
 }
 
 ssh-add -A >/dev/null 2>&1
+
+reload-ssh() {
+  ssh-add -e /usr/local/lib/opensc-pkcs11-local.so
+  ssh-add --apple-use-keychain -s /usr/local/lib/opensc-pkcs11-local.so
+}
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 pasteinit() {
@@ -155,10 +180,15 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 export AWS_DEFAULT_REGION=us-west-2
+
+export EMAIL_ADDRESS=kip.mcentire@oracle.com
 
 #export KUBECONFIG=~/.kube/config
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
