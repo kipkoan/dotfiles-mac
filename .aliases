@@ -59,9 +59,9 @@ pdfman () { man -t $@ | ps2pdf - - | open -f -a Preview; }
 #=  Back-Up file  =============================================================
 #bu () { cp -a "$1" "$1"~$(date +%F.%T)~; }
 bu () {
-  pattern='^.*[^/]'  # get everything except for trailing forward-slashes
+  pattern='^(.*[^/])'  # get everything except for trailing forward-slashes
   [[ $1 =~ $pattern ]]  # match regex
-  file=${BASH_REMATCH[0]}  # assign matched pattern to "$file"
+  file=${match[1]}  # assign matched pattern to "$file"
   cp -a "$file" "$file"~$(date +%F.%T)~
 }
 
