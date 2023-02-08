@@ -9,13 +9,13 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # add Python
-export PATH=/Users/kmcentir/Library/Python/3.8/bin:$PATH
+export PATH=~/Library/Python/3.8/bin:$PATH
 
 # add Rancher Desktop
 export PATH=$HOME/.rd/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kmcentir/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -108,7 +108,7 @@ export EDITOR='vim'
 export LESS='-XFR'
 
 ## pic-tools
-source /Users/kmcentir/Code/bitbucket.oci.oraclecorp.com/PIC/pic-tools/scripts/*.env
+#source $HOME/Code/bitbucket.oci.oraclecorp.com/PIC/pic-tools/scripts/*.env
 
 #for Azul JDK 11
 #export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
@@ -136,7 +136,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias secretCli="java -jar /Users/kmcentir/bin/secrets-cli/secret-service-cli-0.0.407.jar"
+alias secretCli="java -jar $HOME/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
 alias gac="gimme-aws-creds"
 alias v="code"
