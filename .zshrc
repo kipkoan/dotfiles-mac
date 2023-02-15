@@ -86,7 +86,7 @@ HIST_STAMPS="%F %T"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 #plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
-plugins=(git terraform colored-man-pages colorize pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git terraform colored-man-pages colorize pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
