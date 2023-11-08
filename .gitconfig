@@ -1,11 +1,12 @@
 [user]
   name = Kip McEntire
-  email = kip.mcentire@oracle.com
+  email = kipkoan@gmail.com
 
 [core]
   excludesfile = ~/.config/git/ignore
   legacyheaders = false
   pager = less -FMRiX
+	editor = code --wait
 
 [repack]
   usedeltabaseoffset = true

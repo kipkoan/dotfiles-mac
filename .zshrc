@@ -86,7 +86,7 @@ HIST_STAMPS="%F %T"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 #plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
-plugins=(git terraform colored-man-pages colorize pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
+plugins=(git terraform colored-man-pages colorize docker pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -187,6 +187,8 @@ export AWS_DEFAULT_REGION=us-west-2
 export EMAIL_ADDRESS=kip.mcentire@oracle.com
 
 #export KUBECONFIG=~/.kube/config
+
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # tabtab source for packages
 # uninstall by removing these lines
