@@ -139,7 +139,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 alias secretCli="java -jar $HOME/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
 alias gac="gimme-aws-creds"
-alias v="code"
+alias v="cursor"
 alias ld='ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub '
 
 ldu() {
@@ -194,3 +194,4 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
