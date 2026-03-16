@@ -86,7 +86,7 @@ HIST_STAMPS="%F %T"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 #plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
-plugins=(git terraform colored-man-pages colorize docker pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud)
+plugins=(git uv opentofu colored-man-pages colorize docker pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,6 +139,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 alias secretCli="java -jar $HOME/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
 alias gac="gimme-aws-creds"
+alias gcu='git branch --merged | grep -Ev "(^\*|master|main|dev|develop)" | xargs git branch -d'
 alias v="cursor"
 alias ld='ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub '
 
@@ -175,16 +176,10 @@ export PATH="$HOME/.serverless/bin:$PATH"
 
 export PATH="${PATH}:${HOME}/.krew/bin"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
+export AWS_DEFAULT_PROFILE=kipnlar
 export AWS_DEFAULT_REGION=us-west-2
 
-export EMAIL_ADDRESS=kip.mcentire@oracle.com
+export EMAIL_ADDRESS=kipkoan@gmail.com
 
 #export KUBECONFIG=~/.kube/config
 
@@ -195,3 +190,4 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
