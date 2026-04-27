@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/opt/homebrew/bin:/usr/local/bin:$PATH
 
 # add Python
 export PATH=~/Library/Python/3.8/bin:$PATH
@@ -86,7 +86,7 @@ HIST_STAMPS="%F %T"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 #plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
-plugins=(git uv opentofu colored-man-pages colorize docker pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud)
+plugins=(git uv opentofu colored-man-pages colorize docker kubectl pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,18 +138,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 alias secretCli="java -jar $HOME/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
-alias gac="gimme-aws-creds"
 alias gcu='git branch --merged | grep -Ev "(^\*|master|main|dev|develop)" | xargs git branch -d'
-alias v="cursor"
-alias ld='ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub '
-
-ldu() {
-  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub samaccountname=$1 | grep member | sort
-}
-
-ldg() {
-  ldapsearch -h se1-zit-dom-001.zillow.local -D kipm@zillowgroup.com -y ~/.ssh/ldap -o ldif-wrap=no -b "dc=zillow,dc=local" -s sub cn=$1 | grep member | sort
-}
+alias v="codium"
 
 ssh-add -A >/dev/null 2>&1
 
