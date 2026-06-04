@@ -6,7 +6,7 @@
   excludesfile = ~/.config/git/ignore
   legacyheaders = false
   pager = less -FMRiX
-	editor = cursor --wait
+	editor = codium --wait
 
 [repack]
   usedeltabaseoffset = true
