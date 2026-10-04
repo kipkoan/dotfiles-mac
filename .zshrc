@@ -86,7 +86,7 @@ HIST_STAMPS="%F %T"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 #plugins=(git terraform colored-man-pages colorize docker kubectl pip python brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode)
-plugins=(git uv opentofu colored-man-pages colorize docker kubectl pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud)
+plugins=(git aws uv opentofu helm colored-man-pages colorize docker kubectl pip python virtualenv brew macos history z zsh-autosuggestions zsh-syntax-highlighting vi-mode gcloud direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,10 +110,7 @@ export LESS='-XFR'
 ## pic-tools
 #source $HOME/Code/bitbucket.oci.oraclecorp.com/PIC/pic-tools/scripts/*.env
 
-#for Azul JDK 11
-#export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
-#for Azul JDK 8
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home"
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 export M3_HOME="/opt/homebrew/Cellar/maven/3.8.6"
 export M3="$M3_HOME/bin"
@@ -138,8 +135,22 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 alias secretCli="java -jar $HOME/bin/secrets-cli/secret-service-cli-0.0.407.jar"
 
-alias gcu='git branch --merged | grep -Ev "(^\*|master|main|dev|develop)" | xargs git branch -d'
 alias v="codium"
+
+# gcu() ("git clean up") 
+gcu() {
+  git for-each-ref --merged HEAD --format='%(refname:short)' refs/heads/ |
+  grep -Ev '^(master|main|dev|develop)$' |
+  while read -r branch; do
+    [[ "$branch" == "$(git branch --show-current)" ]] && continue
+    local wt=$(git worktree list --porcelain |
+      awk -v b="refs/heads/$branch" '$1=="worktree"{p=$2} $1=="branch" && $2==b {print p}')
+    if [[ -n "$wt" ]]; then
+      git worktree remove -f -f "$wt" || continue
+    fi
+    git branch -d "$branch"
+  done
+}
 
 ssh-add -A >/dev/null 2>&1
 
