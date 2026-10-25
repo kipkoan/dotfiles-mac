@@ -1,6 +1,5 @@
 [user]
   name = Kip McEntire
-  email = kipkoan@gmail.com
 
 [core]
   excludesfile = ~/.config/git/ignore

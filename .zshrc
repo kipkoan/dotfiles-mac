@@ -99,8 +99,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 ### Fix slowness of pastes
 
-export EMAIL_ADDRESS=kipkoan@gmail.com
-
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 export PATH="$HOME/.local/bin:$PATH"
